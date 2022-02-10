@@ -3,7 +3,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+  box-sizing: content-box;
   /* font-family: "Dancing Script", cursive; */
   font-family: "Varela Round", sans-serif;
 }
@@ -19,7 +20,7 @@ body {
 
 body::-webkit-scrollbar {
   /* largura do scroll */
-  width: 1em;
+  width: 0.7em;
 }
 body::-webkit-scrollbar-track {
   /* customização da parte de baixo */
@@ -41,6 +42,31 @@ body::-webkit-scrollbar-thumb:hover {
 
 #map {
   height: 600px;
+}
+
+.counter-number-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-start-number {
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 58px;
+  color: #ffffff;
+}
+
+.counter-start-types {
+  font-family: Varela Round;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
 }
 
 #slide img {
