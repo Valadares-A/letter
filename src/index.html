@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>I & G</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <style type="text/css">
+      body {
+        margin: 0;
+        /* background: #e6e6e6; */
+      }
+      .showSlide {
+        display: none;
+      }
+      .showSlide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: opacity(50%);
+      }
+      .slidercontainer {
+        /* max-width: 1000px; */
+        position: relative;
+        /* margin: auto; */
+      }
+      .left,
+      .right {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+      }
+      .right {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .left:hover,
+      .right:hover {
+        background-color: rgba(115, 115, 115, 0.8);
+      }
+      .content {
+        /* color: #eff5d4;
+        font-size: 30px;
+        padding: 8px 12px; */
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .active {
+        background-color: #717171;
+      }
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center; position: relative">
+      <span style="position: absolute; z-index: 9">contador</span>
+    </div>
+    <div class="slidercontainer" style="background-color: #790c23">
+      <div class="showSlide fade">
+        <img src="./assets/teste1.svg" />
+        <div class="content">
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              width: 100%;
+            "
+          >
+            <span class="names-highlight">Isaac Cordeiro</span>
+            <span
+              style="
+                font-family: Dancing Script;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 64px;
+                line-height: 77px;
+                /* identical to box height */
+
+                color: #ffffff;
+              "
+              >&</span
+            >
+            <span class="names-highlight">Giovana Zingler</span>
+          </div>
+        </div>
+      </div>
+      <div class="showSlide fade">
+        <img src="./assets/teste2.png" />
+        <div class="content">
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              width: 100%;
+            "
+          >
+            <span class="names-highlight">Isaac Cordeiro</span>
+            <span
+              style="
+                font-family: Dancing Script;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 64px;
+                line-height: 77px;
+                /* identical to box height */
+
+                color: #ffffff;
+              "
+              >&</span
+            >
+            <span class="names-highlight">Giovana Zingler</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="showSlide fade">
+        <img src="./assets/3.jpeg" />
+        <div class="content">Slide3 heading</div>
+      </div>
+      <div class="showSlide fade">
+        <img src="./assets/4.jpeg" />
+        <div class="content">Slide4 heading</div>
+      </div> -->
+      <!-- Navigation arrows -->
+      <!-- <a class="left" onclick="nextSlide(-1)">❮</a>
+      <a class="right" onclick="nextSlide(1)">❯</a> -->
+    </div>
+
+    <!-- 1 -->
+    <div style="background-color: white">
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding-top: 32px;
+        "
+      >
+        <img src="./assets/bi_calendar-heart-fill.svg" alt="" />
+        <div style="display: flex; flex-direction: column">
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              color: #790c23;
+            "
+            >24 de Setembro de 2022</span
+          >
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              text-decoration-line: underline;
+
+              color: #7d6261;
+            "
+            >Início da cerimônia: 18h</span
+          >
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              color: #790c23;
+            "
+            >Recepção: 19h</span
+          >
+        </div>
+      </div>
+    </div>
+    <div style="background-color: white; position: relative">
+      <img style="width: 100%" src="./assets/wave.svg" alt="" />
+      <div
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-end;
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+        "
+      >
+        <div style="display: flex; flex-direction: column">
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              text-decoration-line: underline;
+
+              color: #7d6261;
+            "
+            >Cerro Alegre Alto</span
+          >
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              color: #790c23;
+            "
+            >Santa Cruz do Sul - RS</span
+          >
+        </div>
+        <img src="./assets/bi_chat-square-heart-fill.svg" alt="" />
+      </div>
+    </div>
+    <!-- 2 -->
+    <div style="background-color: white">
+      <div style="padding-top: 100px; display: flex">
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 72px;
+              line-height: 86px;
+              letter-spacing: 0.1em;
+              width: 100%;
+              color: #790c23;
+              text-align: center;
+            "
+            >Hospedagem</span
+          >
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 36px;
+              line-height: 43px;
+              text-align: left;
+              padding: 16px;
+              color: #7d6261;
+            "
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+          <img src="./assets/ri_hotel-fill.svg" alt="" />
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <img src="./assets/fa-solid_shuttle-van.svg" alt="" />
+          <span
+            style="
+              font-family: Varela Round;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 36px;
+              line-height: 43px;
+              text-align: right;
+              padding: 16px;
+              color: #7d6261;
+            "
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 72px;
+              line-height: 86px;
+              letter-spacing: 0.1em;
+              width: 100%;
+              color: #790c23;
+              text-align: center;
+            "
+            >Transporte</span
+          >
+        </div>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          padding-top: 32px;
+          position: relative;
+        "
+      >
+        <span
+          style="
+            font-family: Dancing Script;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 64px;
+            line-height: 77px;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 77px;
+          "
+          >Gostariamos de ter a sua presença</span
+        >
+        <div style="display: flex; align-items: center; padding-left: 107px">
+          <img
+            style="
+              width: 299px;
+              height: 225px;
+              filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+              border-radius: 20px;
+              object-fit: cover;
+            "
+            src="./assets/4.jpeg"
+            alt=""
+          />
+          <div style="display: flex; flex-direction: column; margin-left: 60px">
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 36px;
+                line-height: 43px;
+
+                color: #ffffff;
+              "
+              >Isaac Cordeiro</span
+            >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 29px;
+                width: 457px;
+                color: #ffffff;
+                margin-top: 22px;
+              "
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </div>
+        </div>
+        <!-- G -->
+        <div
+          style="
+            position: absolute;
+            top: 59%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          "
+        >
+          <img src="./assets/bi_arrow-through-heart.svg" alt="" />
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            padding-right: 107px;
+            justify-content: end;
+            background-color: white;
+            margin-top: 60px;
+            padding-top: 60px;
+            padding-bottom: 60px;
+          "
+        >
+          <div
+            style="display: flex; flex-direction: column; margin-right: 60px"
+          >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 36px;
+                line-height: 43px;
+                text-align: right;
+                color: #790c23;
+              "
+              >Giovana Zingler</span
+            >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 29px;
+                width: 457px;
+                color: #790c23;
+                margin-top: 22px;
+                text-align: right;
+              "
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </div>
+          <img
+            style="
+              width: 299px;
+              height: 225px;
+              filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+              border-radius: 20px;
+            "
+            src="./assets/13.jpeg"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- 4 -->
+      <div style="height: 860px; background-color: white">
+        <div
+          style="
+            display: flex;
+            background: url(./assets/cloud_bg.svg);
+            height: 100%;
+            position: relative;
+          "
+        >
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 96px;
+              line-height: 115px;
+              letter-spacing: 0.1em;
+              width: 100%;
+              text-align: center;
+              color: #790c23;
+              margin-top: 74px;
+            "
+            >Viagem</span
+          >
+
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              padding: 24px;
+
+              position: absolute;
+              width: 395px;
+              height: 380px;
+              left: 33px;
+              top: 230px;
+
+              background: #790c23;
+              border-radius: 20px;
+            "
+          >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 58px;
+                /* identical to box height */
+
+                text-transform: uppercase;
+
+                color: #ffffff;
+              "
+              >Ônibus</span
+            >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 32px;
+                line-height: 39px;
+                text-align: center;
+
+                color: #ddc0c5;
+              "
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              padding: 24px;
+
+              position: absolute;
+              width: 395px;
+              height: 380px;
+              left: 522px;
+              top: 438px;
+
+              background: #790c23;
+              border-radius: 20px;
+            "
+          >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 58px;
+                /* identical to box height */
+
+                text-transform: uppercase;
+
+                color: #ffffff;
+              "
+              >Carro</span
+            >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 32px;
+                line-height: 39px;
+                text-align: center;
+
+                color: #ddc0c5;
+              "
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+              padding: 24px;
+
+              position: absolute;
+              width: 395px;
+              height: 380px;
+              left: 1011px;
+              top: 230px;
+
+              background: #790c23;
+              border-radius: 20px;
+            "
+          >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 58px;
+                /* identical to box height */
+
+                text-transform: uppercase;
+
+                color: #ffffff;
+              "
+              >Avião</span
+            >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 32px;
+                line-height: 39px;
+                text-align: center;
+
+                color: #ddc0c5;
+              "
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div id="map"></div>
+      <!-- 6 -->
+      <div
+        style="
+          background-color: white;
+          display: flex;
+          height: 860px;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <div>
+          <img src="./assets/ph_sun-horizon-fill.svg" alt="" />
+        </div>
+
+        <div style="display: flex; flex-direction: column">
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 96px;
+              line-height: 115px;
+              letter-spacing: 0.1em;
+              text-align: center;
+              color: #790c23;
+              margin-bottom: 86px;
+            "
+            >Clima</span
+          >
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 24px;
+              width: 576px;
+              height: 424px;
+              background: #790c23;
+              border-radius: 20px;
+            "
+          >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 48px;
+                line-height: 58px;
+                /* identical to box height */
+
+                display: flex;
+                align-items: center;
+                text-align: center;
+
+                color: #ffffff;
+              "
+              >28° / 18°</span
+            >
+            <span
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 36px;
+                line-height: 43px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+
+                color: #ffffff;
+              "
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div style="height: 860px; position: relative">
+        <img
+          style="
+            position: absolute;
+            width: 254px;
+            height: 254px;
+            left: 0px;
+            top: 65.74px;
+          "
+          src="./assets/fa-solid_gift.svg"
+          alt=""
+        />
+        <img
+          style="
+            position: absolute;
+            width: 254px;
+            height: 254px;
+            left: 1078.74px;
+            top: 549px;
+          "
+          src="./assets/mdi_email-newsletter.svg"
+          alt=""
+        />
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+          "
+        >
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 96px;
+              line-height: 115px;
+              letter-spacing: 0.1em;
+
+              color: #ffffff;
+            "
+            >Lista de presentes</span
+          >
+          <div style="display: flex; margin-top: 148px">
+            <a
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 72px;
+                line-height: 87px;
+                /* identical to box height */
+
+                text-decoration-line: underline;
+
+                color: #ffffff;
+              "
+              href=""
+              >Link</a
+            >
+            <a
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 72px;
+                line-height: 87px;
+                text-decoration-line: underline;
+                margin-left: 191px;
+                margin-right: 191px;
+                color: #ffffff;
+              "
+              href=""
+              >Link</a
+            >
+            <a
+              style="
+                font-family: Varela Round;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 72px;
+                line-height: 87px;
+                /* identical to box height */
+
+                text-decoration-line: underline;
+
+                color: #ffffff;
+              "
+              href=""
+              >Link</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div
+        style="
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          height: 860px;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
+        <span
+          style="
+            font-family: Varela Round;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            line-height: 87px;
+            text-align: center;
+            color: #790c23;
+          "
+          >COVID-19</span
+        >
+        <span
+          style="
+            font-family: Varela Round;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            line-height: 87px;
+            text-align: center;
+            color: #790c23;
+          "
+          >A PANDEMIA NÃO ACABOU!</span
+        >
+        <span
+          style="
+            font-family: Varela Round;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 29px;
+            width: 76%;
+            color: #790c23;
+          "
+          >Marcamos nesta data não só por causa do halloween, mas também por
+          causa da vacinação. Até o final de outubro todos os convidados estarão
+          vacinados com as duas doses do imunizante, além da boa notícia dos
+          idosos que já terão recebido a terceira dose de reforço! Além disso, o
+          espaço onde vamos celebrar nosso casamento é bemmmm grande e
+          totalmente aberto, para todos ficarem bem arejados e longe um do
+          outro! Vamos oferecer no evento estações de álcool gel para os
+          convidados. Pedimos a gentileza para quando circularem em áreas com
+          mais pessoas como, por exemplo, os banheiros, usarem a máscara. De
+          preferência a PFF2 – a única que protege de verdade contra o
+          coronavírus. Aproveitamos a deixa para avisar que os noivos fazem
+          questão de NÃO serem abraçados por ninguém. É o nosso jeitinho
+          antissocial de ser, mas é também anti-variante-delta, né? A gente ama
+          vocês, mas não precisa agarrar.</span
+        >
+      </div>
+      <!-- 9 -->
+      <div
+        style="
+          height: 860px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <span
+          style="
+            font-family: Dancing Script;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 72px;
+            line-height: 86px;
+            text-align: center;
+
+            color: #ffffff;
+          "
+          >COM MUITO CARINHO, DO FUNDO DO NOSSO CORAÇÃO…</span
+        >
+        <img
+          style="
+            margin-top: 93px;
+            width: 598px;
+            height: 396px;
+            border-radius: 20px;
+          "
+          src="./assets/9.jpeg"
+          alt=""
+        />
+      </div>
+      <!-- 10 -->
+      <div
+        style="
+          padding-top: 36px;
+          padding-bottom: 36px;
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+          "
+        >
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              color: #790c23;
+            "
+            >Isaac Cordeiro</span
+          >
+          <img src="./assets/ant-design_heart-filled.svg" alt="" />
+          <span
+            style="
+              font-family: Dancing Script;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 48px;
+              line-height: 58px;
+              /* identical to box height */
+
+              color: #790c23;
+            "
+            >Giovana Zingler</span
+          >
+        </div>
+        <span
+          style="
+            font-family: Varela Round;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 22px;
+            /* identical to box height */
+
+            color: #790c23;
+          "
+          >24 de Setembro de 2022</span
+        >
+      </div>
+    </div>
+    <script type="text/javascript">
+      var map = L.map("map").setView([-29.746352, -52.3562802], 15);
+      L.tileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+        minZoom: 3,
+      }).addTo(map);
+      var marker = L.marker([-29.746352, -52.3562802]).addTo(map);
+      var slide_index = 1;
+      displaySlides(slide_index);
+
+      function nextSlide(n) {
+        displaySlides((slide_index += n));
+      }
+
+      function currentSlide(n) {
+        displaySlides((slide_index = n));
+      }
+
+      function displaySlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("showSlide");
+        if (n > slides.length) {
+          slide_index = 1;
+        }
+        if (n < 1) {
+          slide_index = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slide_index - 1].style.display = "block";
+      }
+
+      setInterval(() => {
+        nextSlide(1);
+      }, 5000);
+    </script>
+  </body>
+</html>

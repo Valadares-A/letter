@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Varela+Round&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Dancing Script", cursive; */
+  font-family: "Varela Round", sans-serif;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  min-height: 100vh;
+  background: #790c23;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  /* largura do scroll */
+  width: 1em;
+}
+body::-webkit-scrollbar-track {
+  /* customização da parte de baixo */
+  /* box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); */
+  box-shadow: inset 0 0 5px #ddc0c5;
+  /* border-radius: 10px; */
+}
+body::-webkit-scrollbar-thumb {
+  /* customização do bang que a gente arrasta */
+  /* background: linear-gradient(45deg, orange, darksalmon); */
+  background: #b97f8b;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #ddc0c5;
+}
+
+#map {
+  height: 600px;
+}
+
+#slide img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* width: auto;
+  height: auto; */
+  /* width: 500px;
+  height: 500px; */
+
+  filter: opacity(50%);
+}
+
+.slide-img {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.show {
+  opacity: 1;
+}
+
+.names-highlight {
+  font-family: Dancing Script;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 96px;
+  line-height: 115px;
+  color: #ffffff;
+}
+
+#title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6.5rem;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 115px;
+  color: #ffffff;
+  width: 100%;
+}
