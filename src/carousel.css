@@ -207,8 +207,37 @@ body::-webkit-scrollbar-thumb:hover {
   color: #ffffff;
 }
 
+#info-gift {
+  font-family: Dancing Script;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 78px;
+  line-height: 93px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+#info-gift-link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 68px;
+  text-decoration-line: underline;
+  color: #ffffff;
+}
+
+#info-wishes {
+  font-family: Dancing Script;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 58px;
+  line-height: 72px;
+  text-align: center;
+  color: #ffffff;
+}
+
 #map {
-  height: 600px;
+  height: 460px;
 }
 
 @media (min-width: 40em) {
@@ -232,4 +261,44 @@ body::-webkit-scrollbar-thumb:hover {
     text-align: center;
     color: #ffffff;
   }
+
+  #info-gift {
+    font-family: Dancing Script;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 115px;
+    letter-spacing: 0.1em;
+
+    color: #ffffff;
+  }
+
+  #info-gift-link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 87px;
+    text-decoration-line: underline;
+    color: #ffffff;
+  }
+
+  #info-wishes {
+    font-family: Dancing Script;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 86px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.btn-primary {
+  background-color: #790c23;
+  border-color: #790c23;
+}
+
+.btn-primary:hover {
+  background-color: #ddc0c5;
+  border-color: #ddc0c5;
 }
