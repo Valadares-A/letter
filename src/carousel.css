@@ -27,9 +27,8 @@ body {
   background-color: #790c23 !important;
 }
 .bg-marsala-25 {
-  background-color: #DDC0C5 !important;
+  background-color: #ddc0c5 !important;
 }
-
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -197,6 +196,17 @@ body::-webkit-scrollbar-thumb:hover {
   min-width: 286px;
 }
 
+#info-clima {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
 #map {
   height: 600px;
 }
@@ -210,5 +220,16 @@ body::-webkit-scrollbar-thumb:hover {
   #info-2 {
     font-size: 48px;
     line-height: 58px;
+  }
+
+  #info-clima {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 43px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
   }
 }
