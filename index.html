@@ -724,7 +724,7 @@
         <hr class="featurette-divider" />
       </div>
 
-      <div
+      <!-- <div
         class="container"
         style="
           background-color: #790c23;
@@ -770,7 +770,7 @@
             />
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="container" style="position: relative">
         <div class="row justify-content-center align-items-center">
@@ -813,14 +813,17 @@
                 width: 76%;
                 color: #790c23;
               "
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est
-              laborum..</span
+              >Escolhemos essa data com muito carinho, pensando também na
+              vacinação. Até o final de setembro todos os convidados estarão
+              vacinados com a terceira dose ( dose de reforço ) do imunizante
+              isso é uma ótima notícia! Além disso, o espaço onde vamos celebrar
+              nosso casamento e bem grande e totalmente aberto, para todos
+              ficarem bem arejados é longe um do outro! Vamos oferecer no evento
+              estações de álcool gel para os convidados. Pedimos a gentileza
+              para quando circularem em área com mais pessoas como, por exemplo,
+              os banheiros, usarem máscara. Teremos esse cuidado para que nosso
+              momento juntos seja ainda mais incrível, e seguro para
+              todos.</span
             >
           </div>
         </div>
@@ -962,8 +965,88 @@
             >
           </div>
           <!-- create a centred div -->
+          <div
+            class="col-lg-12 d-flex justify-content-center align-items-center my-4"
+            style="flex-direction: column"
+          >
+            <p>(Música: Chuva de arroz - Luan Santana)</p>
+            <audio id="audio-tag-1" loop controls>
+              <source
+                src="./src/assets/Luan Santana - Chuva de arroz (DVD Luan Santana Acústico).mp3"
+                type="audio/mpeg"
+              />
+              Your browser does not support the audio element.
+            </audio>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title c-marsala" id="exampleModalLabel">
+                      Olá
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body c-marsala">
+                    Gostaria de escutar uma música enquanto visualiza a página?
+                    <br />
+                    Caso não queria, o player se encontra no final da página.
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Não obrigado!
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      onclick="playMusic()"
+                      data-bs-dismiss="modal"
+                    >
+                      Tocar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-12 d-flex justify-content-center my-4">
-            <p><a href="#" class="c-marsala">Back to top</a></p>
+            <!-- src="https://open.spotify.com/track/66rhnZizvTv2ufYpyHoWoW?si=FkFT9D9-QZiItOXNBN7PNA" -->
+            <!-- <iframe
+              src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe> -->
+            <!-- <p>The music is running in the background.</p>
+            <p>
+              (Song: Kalimba which is provided as a Sample Music in Windows)
+            </p>
+            <embed
+              src="./src/assets/X-Ziliot - Rush.mp3"
+              loop="true"
+              autostart="true"
+              width="2"
+              height="2"
+            /> -->
+            <!-- autoplay -->
+            <p><a href="#" class="c-marsala">Voltar ao topo</a></p>
           </div>
         </div>
       </footer>

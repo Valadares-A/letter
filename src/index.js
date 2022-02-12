@@ -37,15 +37,15 @@ const countDown = setInterval(() => {
   var now = new Date();
   var eventDate = new Date(now.getFullYear(), 9, 24, 18, 0, 0);
   var diff = eventDate - now;
-  var months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
-  // var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  // calculate the days left to the end of the month
-  var days = Math.floor(
-    (diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
-  );
-  var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  let forMonths = 1000 * 60 * 60 * 24 * 30;
+  let forDays = 1000 * 60 * 60 * 24;
+  let forHours = 1000 * 60 * 60;
+  let forMinutes = 1000 * 60;
+  var months = Math.round(diff / forMonths - 1);
+  var days = Math.round((diff % forMonths) / forDays + 2);
+  var hours = Math.round((diff % forDays) / forHours);
+  var minutes = Math.round((diff % forHours) / forMinutes);
+  var seconds = Math.round((diff % forMinutes) / 1000);
 
   if (months <= 0 && days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
     clearInterval(countDown);
@@ -85,3 +85,18 @@ document.addEventListener("scroll", () => {
     console.log(error.message);
   }
 });
+
+var music = document.querySelector("#audio-tag-1");
+// music.currentTime = 29;
+console.log(music.currentTime);
+
+console.log(music);
+// alert("teste");
+
+var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {
+  keyboard: false,
+});
+myModal.toggle();
+function playMusic() {
+  music.play();
+}
