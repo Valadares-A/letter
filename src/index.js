@@ -35,17 +35,23 @@ var marker = L.marker([-29.746352, -52.3562802], { icon: heartMarker })
 
 const countDown = setInterval(() => {
   var now = new Date();
-  var eventDate = new Date(now.getFullYear(), 9, 24, 18, 0, 0);
+  var eventDate = new Date(now.getFullYear(), 8, 24, 18, 0, 0);
   var diff = eventDate - now;
-  let forMonths = 1000 * 60 * 60 * 24 * 30;
-  let forDays = 1000 * 60 * 60 * 24;
-  let forHours = 1000 * 60 * 60;
-  let forMinutes = 1000 * 60;
-  var months = Math.round(diff / forMonths - 1);
-  var days = Math.round((diff % forMonths) / forDays + 2);
-  var hours = Math.round((diff % forDays) / forHours);
-  var minutes = Math.round((diff % forHours) / forMinutes);
-  var seconds = Math.round((diff % forMinutes) / 1000);
+  var forMonths = 1000 * 60 * 60 * 24 * 30;
+  var forDays = 1000 * 60 * 60 * 24;
+  var forHours = 1000 * 60 * 60;
+  var forMinutes = 1000 * 60;
+  var months = Math.floor(diff / forMonths);
+  var days = Math.floor((diff % forMonths) / forDays);
+  var hours = Math.floor((diff % forDays) / forHours);
+  var minutes = Math.floor((diff % forHours) / forMinutes);
+  var seconds = Math.floor((diff % forMinutes) / 1000);
+
+  // if (now.getMonth() < 8) {
+  //   eventDate.setMonth(now.getMonth() + 1);
+  //   eventDate.setDate(0);
+  //   days = eventDate.getDate() - now.getDate();
+  // }
 
   if (months <= 0 && days <= 0 && hours <= 0 && minutes <= 0 && seconds <= 0) {
     clearInterval(countDown);
